@@ -1,16 +1,44 @@
 ﻿<%@ Page Title="CustRent" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CustRent.aspx.cs" Inherits="GroupWeb.CustRent" %>
 
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="PH1" runat="server">
     <div>
     <br />
     <br />
-    <asp:Label ID="Label1" runat="server" Text="Details About The Customer Who Have The Most Rentals" Font-Bold="True"></asp:Label>
     <br />
     <br />
-    <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+    <div class="col-md-7">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <center>
+                                <h4> Details About The Customer Who Have The Most Rentals </h4>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                      
+                     <div class="col">
+                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="true">
+                           
+                         </asp:GridView>
+                     </div>
+                  </div>
+      
+                </div>
+            </div>
+        </div>
+               
     <br /><br />
-    <asp:GridView ID="GridView2" runat="server">
+    <asp:GridView class="table table-striped table-bordered" ID="GridView2" runat="server" AutoGenerateColumns="true">
     </asp:GridView>
     <br />
     <asp:Button ID="Button1" runat="server" Text="SHOW ME" Font-Bold="True" Height="32px" Width="110px" OnClick="Button1_Click" />
@@ -20,3 +48,4 @@
 
 </div>
 </asp:Content>
+

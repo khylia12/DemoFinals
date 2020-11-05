@@ -42,5 +42,30 @@ namespace GroupWeb
         {
             Response.Redirect("CustRent.aspx");
         }
+
+        protected void ViewRent(object sender, EventArgs e)
+        {
+            Response.Redirect("ViewCustRent.aspx");
+        }
+
+        protected void ValueRent(object sender, EventArgs e)
+        {
+            Response.Redirect("totalval");
+        }
+
+        protected void AmtEarned(object sender, EventArgs e)
+        {
+            Response.Redirect("AmtEarned");
+        }
+
+        protected void AmtPurchases(object sender, EventArgs e)
+        {
+            Response.Redirect("AmtRent");
+        }
+
+        protected void Amtsales(object sender, EventArgs e)
+        {
+            Response.Redirect("Amtsales");
+        }
     }
 }

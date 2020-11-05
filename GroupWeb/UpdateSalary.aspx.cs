@@ -18,7 +18,7 @@ namespace GroupWeb
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-UHQJEQAC; Initial Catalog=Adv_Database_project; Integrated Security=True;");
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-0C5T5JD\SQLEXPRESS; Initial Catalog=Advance_Database_Project1; Integrated Security=True;");
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
@@ -49,7 +49,7 @@ namespace GroupWeb
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-UHQJEQAC; Initial Catalog=Adv_Database_project; Integrated Security=True;");
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-0C5T5JD\SQLEXPRESS; Initial Catalog=Advance_Database_Project1; Integrated Security=True;");
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
@@ -82,7 +82,7 @@ namespace GroupWeb
             {
                 try
                 {
-                    SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-UHQJEQAC; Initial Catalog=Adv_Database_project; Integrated Security=True;");
+                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-0C5T5JD\SQLEXPRESS; Initial Catalog=Advance_Database_Project1; Integrated Security=True;");
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
@@ -97,6 +97,7 @@ namespace GroupWeb
                     cmd.ExecuteNonQuery();
                     con.Close();
                     Response.Write("<script>alert('Salary Update successfully.');</script>");
+                    GridView2.DataBind();
 
                 }
                 catch (Exception ex)

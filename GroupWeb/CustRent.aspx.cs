@@ -16,7 +16,7 @@ namespace GroupWeb
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-UHQJEQAC; Initial Catalog = Adv_Database_project; Integrated Security=true;");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-0C5T5JD\SQLEXPRESS; Initial Catalog = Advance_Database_Project1; Integrated Security=true;");
             con.Open();
             SqlDataAdapter sqa;
             DataTable dt;
