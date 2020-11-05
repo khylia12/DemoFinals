@@ -18,7 +18,7 @@ namespace GroupWeb
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-UHQJEQAC; Initial Catalog=Adv_Database_project; Integrated Security=True;");
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-0C5T5JD\SQLEXPRESS; Initial Catalog=Advance_Database_Project1; Integrated Security=True;");
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
@@ -29,10 +29,10 @@ namespace GroupWeb
                 da.Fill(dt);
                 if (dt.Rows.Count >= 1)
                 {
-                    Admin.Text = dt.Rows[0]["Admin_Id"].ToString();
-                    Empid.Text = dt.Rows[0]["EmployeeID"].ToString();
-                    AdminBal.Text = dt.Rows[0]["AdminBal"].ToString();
-                    EmpBal.Text = dt.Rows[0]["Employee_Bal"].ToString();
+                    //Admin.Text = dt.Rows[0]["Admin_Id"].ToString();
+                    Empid.Text = dt.Rows[0]["Emp_id"].ToString();
+                    AdminBal.Text = dt.Rows[0]["Admin_Account"].ToString();
+                    EmpBal.Text = dt.Rows[0]["Emp_Account"].ToString();
 
                 }
                 else
@@ -46,9 +46,9 @@ namespace GroupWeb
             }
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
+      protected void Button3_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-UHQJEQAC; Initial Catalog = Adv_Database_project; Integrated Security=true;");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-0C5T5JD\SQLEXPRESS; Initial Catalog = Advance_Database_Project1; Integrated Security=true;");
             con.Open();
             SqlTransaction tran = con.BeginTransaction();
             SqlCommand cmd = new SqlCommand();
@@ -58,7 +58,7 @@ namespace GroupWeb
 
             cmd.Parameters.Clear();
             cmd.Parameters.Add("@emp", SqlDbType.VarChar).Value = Empid.Text;
-            cmd.Parameters.Add("@adm", SqlDbType.VarChar).Value = Admin.Text;
+            cmd.Parameters.Add("@adm", SqlDbType.VarChar).Value = AdminBal.Text;
             cmd.Parameters.Add("@amt", SqlDbType.Decimal).Value = Trans.Text;
 
             int flag1 = cmd.ExecuteNonQuery();
@@ -70,37 +70,62 @@ namespace GroupWeb
                 if (flag1 > 0)
                 {
                     tran.Commit();
-                    Response.Write("Transaction Success");
+                    Response.Write("<script>alert('Successful Transaction');</script>");
                 }
                 else
                 {
                     tran.Rollback();
-                    Response.Write("Transaction Failed");
+                    Response.Write("<script>alert('Transaction Failed');</script>");
                 }
             }
             else
             {
-                Response.Write("Transaction Failed");
+                Response.Write("<script>alert('Transaction Failed');</script>");
             }
         }
 
-        protected void Button3_Click1(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-UHQJEQAC; Initial Catalog = Adv_Database_project; Integrated Security=true;");
-            con.Open();
-            SqlDataAdapter sqa;
-            DataTable dt;
-            sqa = new SqlDataAdapter("Select *from Payment", con);
-            dt = new DataTable();
-            sqa.Fill(dt);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
-
-        }
-
+        
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("Admin.aspx");
         }
+
+        protected void Button3_Click1(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-0C5T5JD\SQLEXPRESS; Initial Catalog = Advance_Database_Project1; Integrated Security=true;");
+            con.Open();
+           // SqlDataAdapter sqa;
+           // DataTable dt;
+           //sqa = new SqlDataAdapter("Select *from Payment", con);
+            //dt = new DataTable();
+            //sqa.Fill(dt);
+            ////GridView2.DataSource = dt;
+            GridView2.DataBind();
+        }
+
+        /* protected void Button3_Click(object sender, EventArgs e)
+         {
+             try
+             {
+
+             }
+             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-0C5T5JD\SQLEXPRESS; Initial Catalog = Advance_Database_Project1; Integrated Security=true;");
+             if (con.State==ConnectionState.Closed)
+             {
+                 con.Open();
+             }
+             //SqlDataAdapter sqa;
+             //DataTable dt;
+             SqlCommand cmd = new SqlCommand("Select * from Payment", con);
+             //dt = new DataTable();
+             //sqa.Fill(dt);
+             // GridView2.DataSource = dt;
+             cmd.ExecuteNonQuery();
+             con.Close();
+             GridView2.DataBind();
+
+         }*/
+
+
     }
 }

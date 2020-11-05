@@ -1,20 +1,22 @@
 ﻿<%@ Page Title="MostSalest" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MostSales.aspx.cs" Inherits="GroupWeb.MostSales" %>
-
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="PH1" runat="server">
 <div>
         <br />
         <br />
         <br />
-        <asp:Label ID="Label1" runat="server" Text="Employee With The Most Sales" Font-Bold="True"></asp:Label>
+        <h4>Employee With The Most Sales</h4>
         &emsp;
-        <asp:TextBox ID="Sales" runat="server"></asp:TextBox> 
-        &emsp;
+        <asp:TextBox Class="form-control" ID="Sales" runat="server"></asp:TextBox> 
+        
         <asp:Button ID="Button1" runat="server" Text="Show Me" Font-Bold="True" OnClick="Button1_Click" />
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="true">
+                           
+                         </asp:GridView>
         <br />
         <br />
-        <asp:Button ID="Button2" runat="server" Text="&lt;&lt; Go Back" Font-Bold="True" Height="30px" OnClick="Button2_Click" />
     </div>
 </asp:Content>

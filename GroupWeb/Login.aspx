@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Login Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="GroupWeb.Login" %>
-
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="PH1" runat="server">
        <div class="container">
       <div class="row">
          <div class="col-md-6 mx-auto">
@@ -9,7 +10,7 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <img width="150px" src="Image/admin.png" />
+                           <img width="150px" src="images/admin.png" />
                         </center>
                      </div>
                   </div>

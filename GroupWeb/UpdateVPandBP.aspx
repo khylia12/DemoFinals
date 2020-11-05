@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="UpdateVPandBP" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UpdateVPandBP.aspx.cs" Inherits="GroupWeb.UpdateVPandBP" %>
-
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="PH1" runat="server">
     <div class="container-fluid">
       <div class="row">
          <div class="col-md-5">
@@ -85,10 +86,40 @@
                      </div>
                 </div>
                      <br>
-             <asp:Button ID="Button5" runat="server" Text="<< Go Back" Font-Bold="True" Height="37px" style="margin-top: 0" Width="126px" OnClick="Button4_Click1" />
             <br>
           </div>
-    </div>
+    
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <center>
+                                <h4> Payment </h4>
+                            </center>
+                        </div>
+                    </div>                                      
+                    <div class="row">
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Advance_Database_Project1ConnectionString %>" SelectCommand="SELECT * FROM [Jewellery1]"></asp:SqlDataSource>
+                     <div class="col">
+                        <asp:GridView class="table table-striped table-bordered" ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="jewel_id">
+                            <Columns>
+                                <asp:BoundField DataField="jewel_id" HeaderText="jewel_id" SortExpression="jewel_id" ReadOnly="True" />
+
+                                <asp:BoundField DataField="Metal_type" HeaderText="Metal_type" SortExpression="Metal_type" />
+                                <asp:BoundField DataField="Descrip" HeaderText="Descrip" SortExpression="Descrip" />
+                                <asp:BoundField DataField="Valued_price" HeaderText="Valued_price" SortExpression="Valued_price" />
+                                <asp:BoundField DataField="used_jewellery" HeaderText="used" SortExpression="used_jewellery" />
+                                <asp:BoundField DataField="Buy_Price" HeaderText="Buy_Price" SortExpression="Buy_Price" />
+                                <asp:BoundField DataField="QuantityAvailable" HeaderText="Quantity" SortExpression="QuantityAvailable" />
+                            </Columns>
+                         </asp:GridView>
+                     </div>
+                  </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </asp:Content>
