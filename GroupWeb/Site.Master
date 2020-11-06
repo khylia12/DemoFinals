@@ -46,6 +46,12 @@
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                    <asp:LinkButton class="nav-link" id="Home" runat="server"  Visible="true" onclick="HomeP"> Home </asp:LinkButton>
+                  <li class="nav-item active">
+                    <asp:LinkButton class="nav-link" id="About" runat="server"  Visible="true" onclick="AboutP"> About Us </asp:LinkButton>
+                     <li class="nav-item active">
+                    <asp:LinkButton class="nav-link" id="Products" runat="server"  Visible="true" onclick="ProductP"> Products </asp:LinkButton>
                   <li class="nav-item active">
                         <asp:LinkButton class="nav-link" id="LinkButton1" runat="server"  Visible="true" onclick="Adminlog"> Login </asp:LinkButton>
                   </li>                    
