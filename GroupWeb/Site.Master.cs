@@ -56,5 +56,18 @@ namespace GroupWeb
 
             Response.Redirect("homepage.aspx");
         }
+        protected void AboutP(object sender, EventArgs e)
+        {
+            Response.Redirect("About.aspx");
+        }
+
+        protected void HomeP(object sender, EventArgs e)
+        {
+            Response.Redirect("homepage.aspx");
+        }
+        protected void ProductP(object sender, EventArgs e)
+        {
+            Response.Redirect("Jewels.aspx");
+        }
     }
 }
